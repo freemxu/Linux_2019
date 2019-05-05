@@ -1,0 +1,10 @@
+//编译单个文件 以main.c为例
+gcc -c main.c
+gcc -o main.o main
+./main
+
+//编译多个级联文件 main.c calculate.c
+gcc -c main.c calculate.c
+gcc -o main.o calculate.o   //得到a.out
+./a.out
+
