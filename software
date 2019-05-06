@@ -1,0 +1,7 @@
+//ubuntu换源
+/etc/apt/sources.list 
+
+//下载插件（以nautilus为例）
+sudo apt-get update       //更新源
+sudo apt-cache nautilus   //查找相关包
+sudo apt-get install nautilus   //下载包
