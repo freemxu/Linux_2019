@@ -1,0 +1,76 @@
+//进入指定目录
+cd 
+cd [相对路径/绝对路径]
+cd /home 从根目录进入home目录下，采用绝对路径。“/”表示跟目录。
+cd ~ 进入用户主目录下，波浪号表示主目录。
+cd ./software 或cd software 从当前目录进入software目录中，采用相对路径。
+cd . 单点符（.）表示当前目录。
+cd ..双点符（..）表示上层目录，返回上次目录。
+
+//查看当前目录
+pwd
+
+//查看文件及目录列表
+ls 
+ls 列出当前目录下文件及目录列表，默认列表是按照字母排序（按列排序而不是按照行排序）。
+ls -a 列出当前目录所有的隐藏文件和普通文件及目录。
+ls -l 等同于ll列出文件及目录更多信息。（alias ll='ls -l --color=auto')
+ls -al 等同于ll -a列出所有文件及目录更多信息（包含隐藏文件）。
+ls -l /home 列出home下的文件及目录更多信息。
+
+//创建新文件
+touch
+touch a.txt 在当前目录创建一个a.txt文件
+touch /home/hzq/b.txt 在指定目录下创建一个b.txt文件
+
+//创建一个目录
+mkdir
+mkdir test 在当前目录下创建test文件夹
+mkdre -p /home/hzq/test/a 在指定路径下创建文件夹，-p 会根据需要创建缺失的父目录
+
+//复制文件
+cp
+cp b.txt a/ 将b.txt文件复制到a文件夹下，如果a文件下已经存在，直接覆盖。
+cp -i b.txt a/ 跟上面相同操作，只是多一个-i参数，表示如果a文件下已经存在，提示用户是否覆盖。
+cp -r a/ e/ 将a文件夹及文件夹下所有的文件复制到e目录下。-r表示递归。
+
+//文件重命名及移动文件
+mv
+mv b.txt a.txt 将文件重命名为a.txt
+mv b.txt a/e.txt 将文件移动到a文件下，并重命名为e.txt
+
+//删除文件及目录
+rm
+rm e.txt 删除文件
+rm -r a/ 删除a文件夹及子文件和文件夹，-r表示递归。
+rm -rf e/ 强行删除e文件夹及子文件和文件夹，-f表示强制删除。
+
+//查看文件类型
+file
+
+//查看文件
+cat
+cat b.txt 查看b.txt文件内容
+cat -b b.txt 给文本行添加行号
+cat -n b.txt 给所有的添加行号
+
+more
+more b.txt 查看文件内容
+
+less
+less b.txt 查看文件内容
+e 向下逐行查看
+y 向上逐行查看
+f 向下翻一屏查看
+b 向上翻一屏查看
+d 向下翻半屏查看
+u 向上翻半屏查看
+
+head
+head b.txt 查看开头内容，默认是10行
+head -n 2 b.txt或head -2 b.txt 查看开头两行的内容
+
+//链接文件
+ln
+ln -s b.txt d.txt 创建符号链接，类似于windows系统中的快捷方式。
+ln b.txt e.txt 创建硬链接
