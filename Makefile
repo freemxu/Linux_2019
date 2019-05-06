@@ -9,7 +9,7 @@ calculator.o:calculator.c
 clean:
 	rm main *.o
 
-//gcc-4
+//gcc-4			（添加了clean操作）
 result:main array calculator
 	gcc main.o array.o calculator.o -o result
 
